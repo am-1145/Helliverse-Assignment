@@ -9,10 +9,11 @@ import data from "../userData.json" assert { type: "json" };
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+app.use(cors())
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://heliverse-frontend-vite.vercel.app",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
@@ -32,8 +33,9 @@ const uploadUsers = async () => {
   } catch (error) {
     console.log(error);
   }
+  console.log(uploadUsers);
+  uploadUsers();
 };
-
 app.listen(PORT, () => {
   connectDB();
   console.log("Server is running on port 3000");

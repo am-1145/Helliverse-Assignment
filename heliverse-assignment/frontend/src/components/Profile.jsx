@@ -19,7 +19,7 @@ const Profile = () => {
 
   const createTeam = async () => {
     const response = await axios.post(
-      "https://heliverse-assignment-production.up.railway.app/api/team/",
+      "http://localhost:3000/api/team/",
       {
         memberIds: teamMembers.map((member) => member.id),
       }
